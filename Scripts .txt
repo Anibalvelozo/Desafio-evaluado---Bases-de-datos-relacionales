@@ -1,0 +1,48 @@
+Ingresa al cliente de PostgreSQL:
+psql -U postgres
+
+Crea una base de datos:
+
+CREATE DATABASE desafio_Anibal_Velozo_912;
+
+Ingresa a la base de datos creada:
+
+\c desafio_Anibal_Velozo_912;
+
+Crea una tabla llamada clientes:
+
+CREATE TABLE clientes (
+    email VARCHAR(50),
+    nombre VARCHAR,
+    telefono VARCHAR(16),
+    empresa VARCHAR(50),
+    prioridad SMALLINT
+);
+
+Inserta 5 clientes distintos con distintas prioridades:
+
+INSERT INTO clientes (email, nombre, telefono, empresa, prioridad)
+VALUES
+    ('cliente1@example.com', 'Cliente 1', '123456789', 'Empresa A', 10),
+    ('cliente2@example.com', 'Cliente 2', '987654321', 'Empresa B', 8),
+    ('cliente3@example.com', 'Cliente 3', '555555555', 'Empresa C', 5),
+    ('cliente4@example.com', 'Cliente 4', '666666666', 'Empresa D', 7),
+    ('cliente5@example.com', 'Cliente 5', '444444444', 'Empresa E', 9);
+
+Selecciona los tres clientes de mayor prioridad:
+
+SELECT *
+FROM clientes
+ORDER BY prioridad DESC
+LIMIT 3;
+
+LIMIT 3;
+Selecciona 2 registros basados en prioridad o empresa:
+
+SELECT *
+FROM clientes
+WHERE prioridad = 10
+OR empresa = 'Empresa B'
+LIMIT 2;
+
+
